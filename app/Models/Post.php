@@ -9,13 +9,15 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title', 'content'
+        'title',
+        'content'
     ];
 
     /**
      * Get the comments for the blog category.
      */
-    function comments(){
+    function comments()
+    {
         return $this->hasMany(Comment::class);
 
     }
@@ -23,14 +25,16 @@ class Post extends Model
     /**
      * Get the category that owns the blog post.
      */
-    function category(){
+    function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
     /**
      * Get the user that owns the blog post.
      */
-    function user(){
+    function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
