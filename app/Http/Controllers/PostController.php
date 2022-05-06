@@ -15,6 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate();
+
         return view('post.index', compact('posts'));
     }
 
@@ -48,6 +49,7 @@ class PostController extends Controller
     public function show(int $id)
     {
         $post = Post::find($id);
+
         return view('post.show', compact('post'));
     }
 
